@@ -59,7 +59,7 @@ export const handlePromise = (promise) => {
   return promise
     .then((val) => val)
     .catch((reason) => {
-      'message' in reason ? onReject(reason) : reason;
+      return 'message' in reason ? onReject(reason) : reason;
     });
 };
 

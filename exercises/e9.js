@@ -39,7 +39,8 @@ export function alwaysThrows() {
 
 export function onReject(err) {
   // Your code goes here...
-  'message' in err ? console.log(err.message) : console.log(err);
+  const value = err.message ? err.message : err;
+  console.log(value);
 }
 
 /**
@@ -65,16 +66,16 @@ export function onReject(err) {
 
 // Your code goes here...
 export const promise = Promise.resolve(iterate(1))
-  .then((num) => iterate(num))
-  .then((num) => iterate(num))
-  .then((num) => iterate(num))
-  .then((num) => iterate(num))
-  .then((num) => alwaysThrows())
-  .then((num) => iterate(num))
-  .then((num) => iterate(num))
-  .then((num) => iterate(num))
-  .then((num) => iterate(num))
-  .catch((err) => onReject(err));
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(alwaysThrows)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .then(iterate)
+  .catch(onReject);
 
 
 

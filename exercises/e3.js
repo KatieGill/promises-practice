@@ -17,7 +17,7 @@
 export const getPromise = (num) => {
   // Your code goes here...
   if (Number.isInteger(num)) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve(num);
     });
   } else {
@@ -40,7 +40,8 @@ export const updateSumValue = () => {
   // Your code goes here...
   let sum = 2;
   getPromise(120).then((val) => sum += val);
-  return sum += 8;
+  sum += 8;
+  return sum;
 };
 
 // === TEST YOURSELF ===

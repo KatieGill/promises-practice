@@ -87,7 +87,7 @@ export const newPromiseArr = promiseArr.filter((promise) => {
 export const handlePromise4 = (arr) => {
   return Promise.race(arr)
     .then((val) => val)
-    .catch((e) => e);
+    .catch((err) => err);
 };
 
 // === TEST YOURSELF ===

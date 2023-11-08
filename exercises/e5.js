@@ -24,8 +24,8 @@ export const attachTitle = (arg) => {
 export const getPromise = () => {
   // Your code goes here...
   return new Promise((resolve, reject) => resolve('MANHATTAN'))
-    .then((val) => attachTitle(val))
-    .then((data) => console.log(data));
+    .then(attachTitle)
+    .then(console.log);
 };
 
 // === TEST YOURSELF ===
